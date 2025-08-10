@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px;">
+    <div class="col-md-offset-4 col-md-4">
+            <h2 class="text-primary page-header text-center">USER REGISTRATION</h2>
+    </div>
+     <div class="col-md-offset-4 col-md-4 well">
+        <form method='POST' autocomplete="off">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">Register</button>
+        </form>
+        <div>
+                <a href="{% url 'login' %}" class="btn btn-default" style="width:100%; margin-top:10px;">Already have an account? Login</a>
+
+        </div>
+     </div>
+</div>
+{% endblock %}
